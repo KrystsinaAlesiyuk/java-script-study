@@ -2,19 +2,19 @@ import Page from "./page";
 
 class NewYahooAccount extends Page {
 
-    get inputFirstName() {
+    get firstName() {
         return $('#usernamereg-firstName');
     }
 
-    get inputLastName() {
+    get lastName() {
         return $('#usernamereg-lastName');
     }
 
-    get inputEmailAddress() {
+    get emailAddress() {
         return $('#usernamereg-yid');
     }
 
-    get inputPassword() {
+    get password() {
         return $('#usernamereg-password');
     }
 
@@ -22,7 +22,7 @@ class NewYahooAccount extends Page {
         return $('[name="shortCountryCode"]');
     }
 
-    get inputPhoneNumber() {
+    get phoneNumber() {
         const selector = '//*[@id="usernamereg-phone"]';
         return $(selector);
     }
@@ -31,32 +31,35 @@ class NewYahooAccount extends Page {
         return $('#usernamereg-month');
     }
 
-    get inputBirthDay() {
+    get birthDay() {
         return $('#usernamereg-day');
     }
 
-    get inputBirthYear() {
+    get birthYear() {
         return $('#usernamereg-year');
     }
 
-    get inputGender() {
+    get gender() {
         return $('#usernamereg-freeformGender');
     }
 
+    setText = (el, text) => el.setValue(text);
+
     setFirstName(text) {
-        this.inputFirstName.setValue(text);
+        this.setText(this.firstName, text)
+
     }
 
     setLastName(text) {
-        this.inputLastName.setValue(text);
+        this.setText(this.lastName, text)
     }
 
     setEmailAddress(text) {
-        this.inputEmailAddress.setValue(text);
+        this.setText(this.emailAddress, text)
     }
 
     setPassword(text) {
-        this.inputPassword.setValue(text);
+        this.setText(this.password, text)
     }
 
     setCountryCode(text) {
@@ -65,7 +68,7 @@ class NewYahooAccount extends Page {
     }
 
     setPhoneNumber(text) {
-        this.inputPhoneNumber.setValue(text);
+        this.setText(this.phoneNumber, text)
     }
 
     setBirthMonth(text) {
@@ -74,15 +77,15 @@ class NewYahooAccount extends Page {
     }
 
     setBirthDay(text) {
-        this.inputBirthDay.setValue(text)
+        this.setText(this.birthDay, text)
     }
 
     setBirthYear(text) {
-        this.inputBirthYear.setValue(text)
+        this.setText(this.birthYear, text)
     }
 
     setGender(text) {
-        this.inputGender.setValue(text)
+        this.setText(this.gender, text)
     }
 }
 
