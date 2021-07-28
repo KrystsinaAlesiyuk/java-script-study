@@ -1,46 +1,62 @@
 import Page from "./page";
 
+const selectors = {
+    firstName: '#usernamereg-firstName',
+    lastName: '#usernamereg-lastName',
+    emailAddress: '#usernamereg-yid',
+    password: '#usernamereg-password',
+    choiceCode: '[name="shortCountryCode"]',
+    phoneNumber: '//*[@id="usernamereg-phone"]',
+    choiceMonth: '#usernamereg-month',
+    birthDay: '#usernamereg-day',
+    birthYear: '#usernamereg-year',
+    gender: '#usernamereg-freeformGender'
+}
+
 class NewYahooAccount extends Page {
 
+    getSelectors() {
+        return selectors
+    }
+
     get firstName() {
-        return $('#usernamereg-firstName');
+        return $(selectors.firstName);
     }
 
     get lastName() {
-        return $('#usernamereg-lastName');
+        return $(selectors.lastName);
     }
 
     get emailAddress() {
-        return $('#usernamereg-yid');
+        return $(selectors.emailAddress);
     }
 
     get password() {
-        return $('#usernamereg-password');
+        return $(selectors.password);
     }
 
     get choiceCode() {
-        return $('[name="shortCountryCode"]');
+        return $(selectors.choiceCode);
     }
 
     get phoneNumber() {
-        const selector = '//*[@id="usernamereg-phone"]';
-        return $(selector);
+        return $(selectors.phoneNumber);
     }
 
     get choiceMonth() {
-        return $('#usernamereg-month');
+        return $(selectors.choiceMonth);
     }
 
     get birthDay() {
-        return $('#usernamereg-day');
+        return $(selectors.birthDay);
     }
 
     get birthYear() {
-        return $('#usernamereg-year');
+        return $(selectors.birthYear);
     }
 
     get gender() {
-        return $('#usernamereg-freeformGender');
+        return $(selectors.gender);
     }
 
     setText = (el, text) => el.setValue(text);
