@@ -44,7 +44,7 @@ class NewYahooAccount extends Page {
     }
 
     get choiceMonth() {
-        return $(selectors.choiceCode);
+        return $(selectors.choiceMonth);
     }
 
     get birthDay() {
